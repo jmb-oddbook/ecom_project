@@ -1,0 +1,66 @@
+** Tasks to do in SQL **
+After you've loaded your database in your RDBMS, the priority is to solve all the business questions using SQL queries instead of Pandas dataframe commands:
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+What are the average ratings for each product type?
+
+SELECT
+    round(avg(rating), 2) as AverageRating,
+    product_type
+FROM products
+GROUP BY
+    product_type
+ORDER BY AverageRating DESC
+
+
+4.36	mouse
+4.35	dslr camera
+4.28	monitor
+4.25	keyboard
+4.22	processor
+4.13	smartphone
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+What are the 5 items generating the maximum sales revenue?
+
+SELECT
+    round(sum(inv.total_sale), 2) as total_sales,
+    title
+FROM invoice_product inv
+INNER JOIN products ON products.ASIN = inv.ASIN AND products.StockCode = inv.StockCode AND products.product_type = inv.product_type
+GROUP BY 
+    title
+ORDER BY total_sales DESC
+LIMIT 5
+
+
+27_268_987.5	Samsung Galaxy S9 G960U 64GB Unlocked 4G LTE Phone w/ 12MP Camera - Coral Blue
+19_276_339.0	Apple iPhone X, 256GB, Silver - Fully Unlocked (Renewed)
+ 9_252_885.0	Samsung Galaxy S10+ Plus 128GB+8GB RAM SM-G975F/DS Dual Sim 6.4" LTE Factory Unlocked Smartphone International Model, No Warranty (Prism Black)
+ 9_211_997.08	Intel Core i7-8700K Desktop Processor 6 Cores up to 4.7GHz Turbo Unlocked LGA1151 300 Series 95W
+ 8_557_311.92	(Renewed) Latest Microsoft Surface Pro 4 (2736 x 1824) Tablet 6th Generation (Intel Core i5-6300U, 8GB Ram, 256GB SSD, Bluetooth, Dual Camera) Windows 10 Professional
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+What are the 5 countries generating the max sales revenue, excluding the host country?
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+What are the 3 products in each product segment with the highest customer rating? (Hint: check partition function)
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Are they the 3 most reviewed products as well?
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+What are the 3 best-sellers products in each product segment? (Quantity wise) (Hint: partition function again)
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+What are the first and second worst-selling products in every category? (Quantity wise)
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Unique customers per month for the year 2019. There's a catch here: contrary other 'heavier' RDBMS, SQLite does not support the functions YEAR() or MONTH() to extract the year or the month in a date. You will have to create two new columns: yr and mnth.
