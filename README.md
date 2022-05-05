@@ -15,7 +15,7 @@ I really should have deleted the "total_sale" on the invoice table as that is a 
 Do some exploratory data anaylsis with the sales database.<br />
 Was able to reuse some code that I used for cleaning the data to feed into an SQLite database.
 
-## Part 5 -- Visualizations
+## Part 5 -- Visualisations
 Currently in the works.
 
 ## Part 6 -- Presentation
