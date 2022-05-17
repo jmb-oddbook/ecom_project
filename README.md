@@ -1,4 +1,4 @@
-# CAB Project 3 - Playing with E-commerce
+# CAB Project 3 - ~~Playing with~~ E-commerce
 
 We, an imaginary team of data analysts (for now just me and my laptop Myc), have been tasked with helping an equally imaginary subsidiary branch of a larger company break into the EU e-commerce market. The hopeful branch company, VS Electronics, wishes to expand into consumer electronics and have little experience with the e-commerce market.
 
@@ -17,7 +17,7 @@ Problems encountered in the data set:
 * There are 139315 records in the customer table (linked to the invoice table) where the CustomerID is not known. There needs to be a mark that makes the CustomerID unique even if that customer did not log in. If this is a technical issue, this needs fixing.
 * A CustomerID may be linked to more than one country. This should not be. Have pity on your statistics.
 * The invoice table needs a proper timestamp field with hours:minutes:seconds. There is one InvoiceNo with both 11 and 12 o'clock.
-* There are products that cosist of different items and are listed in different product cetegories. Not really a problem per se, but there may be some improvement to be made here.
+* There are products that consist of different items and are listed in different product cetegories. Not really a problem per se, but there may be some improvement to be made here.
 
 ## Part 2 -- Designing the database
 One self-imposed restriction was to not add any fields to the tables. It would have been much easier to just add a new field with a unique, sequential ID to the products table and be done with it.
