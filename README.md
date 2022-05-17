@@ -34,7 +34,7 @@ In MySQL it would look like this. The only difference is in the data types.
 We already fed the database in the Jupyter notebook [read_in.ipynb](read_in.ipynb). The [SQL queries](sql_task_questions.txt) are not intended for VS Electronics but for internal use only.
 
 ## Part 4 -- Back to Python and Jupyter
-We have reused most of the code from *read_in.ipynb* but instead of splitting the data into different tables we have combined it into one large data frame.<br />
+We have reused most of the code from *read_in.ipynb* in a [new Jupyter notebook](ecom_eda.ipynb) but instead of splitting the data into different tables we have combined it into one large data frame.<br />
 There are no null strings or values in the new data frame, no duplicates, and strange symbols in the product title have been cleaned up.
 
 This large data frame has been exported twice. One for use in Tableau and one for further analysis with pandas. Tableau does not like decimal separators as a period and requires them to be a comma.<br />
