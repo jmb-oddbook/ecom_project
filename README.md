@@ -27,7 +27,7 @@ In accordance with good database design we want to divide our data based on subj
 In SQLite the schema of the database looks like this:
 ![SQLite schema](/schemas/schema_sqlite.jpg?raw=true)
 
-In MySQL it would look like this. The only difference is in the datatypes.
+In MySQL it would look like this. The only difference is in the data types.
 ![MySQL schema](/schemas/schema_mysql.jpg?raw=true)
 
 ## Part 3 -- Feed the database and do some SQL queries
@@ -35,9 +35,10 @@ We already fed the database in the Jupyter notebook [read_in.ipynb](read_in.ipyn
 
 ## Part 4 -- Back to Python and Jupyter
 We have reused most of the code from *read_in.ipynb* but instead of splitting the data into different tables we have combined it into one large data frame.<br />
-There are no null strings or values in the new data frame, no duplicates, and strange symbold in the product title have been cleaned up.
+There are no null strings or values in the new data frame, no duplicates, and strange symbols in the product title have been cleaned up.
 
-This large data frame has been exported twice. One for use in Tableau and one for further analysis with pandas. Tableau does not like decimal separators as a periods and requires them to be a comma.
+This large data frame has been exported twice. One for use in Tableau and one for further analysis with pandas. Tableau does not like decimal separators as a period and requires them to be a comma.<br />
+Because of their size these two files have not been uploaded to GitHub.
 
 ## Part 5 -- Visualisations
 Pretty graphs.
