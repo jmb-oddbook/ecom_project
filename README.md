@@ -13,14 +13,25 @@ We have received one Microsoft Excel file containing five worksheets and 554417 
 To see the process of our data cleaning and further information on the data, please see the comments in [the Jupyter notebook](read_in.ipynb).
 
 Problems encountered in the data set:
-
-
+* One StockCode may be shared by two ASINs. There are 657 instances of this, that makes it *not* a typo. Please ask logistics if the products with those ASINs also share the same shelf space. This makes it difficult to rearrange just one or update the number of products in the stores.
+* There are 139315 records in the customer table (linked to the invoice table) where the CustomerID is not known. There needs to be a mark that makes the CustomerID unique even if that customer did not log in. If this is a technical issue, this needs fixing.
+* A CustomerID may be linked to more than one country. This should not be. Have pity on your statistics.
+* The invoice table needs a proper timestamp field with hours:minutes:seconds. There is one InvoiceNo with both 11 and 12 o'clock.
+* There are products that cosist of different items and are listed in different product cetegories. Not really a problem per se, but there may be some improvement to be made here.
 
 ## Part 2 -- Designing the database
-loremipsum
-[insert schema image here]
+One self-imposed restriction was to not add any fields to the tables. It would have been much easier to just add a new field with a unique, sequential ID to the products table and be done with it.
+
+In accordance with good database design we want to divide our data based on subject and reduce the data in the tables to the least common denomiator. This reduces redundant data and aids in ensuring the accuracy and integrity of the data as a whole as there is then only one point where a certain value can be changed, it does not appear elsewhere. Each table is required to have a primary and/or foreign key with which to link to other tables.
+
+In SQLite the schema of the database looks like this:
+![SQLite schema](/schemas/schema_sqlite.jpg?raw=true)
+
+In MySQL it would look like this. The only difference is in the datatypes.
+![MySQL schema](/schemas/schema_mysql.jpg?raw=true)
 
 ## Part 3 -- Feed the database and do some SQL queries
+We already fed the database in the Jupyter notebook [read_in.ipynb](read_in.ipynb). The [SQL queries](sql_task_questions.txt) are not intended for VS Electronics but for internal use only.
 
 ## Part 4 -- Back to Python and Jupyter
 Do some exploratory data anaylsis with the sales database.
