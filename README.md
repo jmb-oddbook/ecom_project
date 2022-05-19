@@ -7,6 +7,8 @@ Our project brief asked us to supply an overview of the e-commerce business mode
 We are waiting for a response from the VSE team for clarification of the following point(s):
 * You wish to *"[...] focus on selling 'Laptops', 'Monitors', 'Headphones', 'Processors', etc."* and yet in the data we received there are also items which are not strictly consumer electronics. Consumer electronics usually include devices for entertainment, communication, and recreation ("black/brown goods") opposed to devices for housekeeping ("white goods). In the data set we received are also for example telescopes, which with their computer components could be considered black goods but are more often placed with optic equipment. Also in the set are food processors which are white goods and several items that would be considered accessories (selfie stick, camera grip, laptop bag, &c.) or computer components (RAM, flash cards, cooling paste, &c.). Is this something you wish to keep offering?
 
+If you are looking for the quick overview on e-commerce please check the presentation files. The odp and pdf are the presentation and the odt file the script of the presentation.
+
 ## Part 1 -- Tidying the tables
 We have received one Microsoft Excel file containing five worksheets and 554417 rows per sheet. The rows were added sequentially so that row n on sheet A belongs to row n on sheet B, &c., this makes work much easier. We imported the Excel data to a pandas data frame in a Jupyter notebook and after cleaning exported the resulting data frame to a SQLite database. 
 
