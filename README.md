@@ -39,11 +39,14 @@ We already fed the database in the Jupyter notebook [read_in.ipynb](read_in.ipyn
 We have reused most of the code from *read_in.ipynb* in a [new Jupyter notebook](ecom_eda.ipynb) but instead of splitting the data into different tables we have combined it into one large data frame.<br />
 There are no null strings or values in the new data frame, no duplicates, and strange symbols in the product title have been cleaned up.
 
-This large data frame has been exported twice. One for use in Tableau and one for further analysis with pandas. Tableau does not like decimal separators as a period and requires them to be a comma.<br />
+~~This large data frame has been exported twice. One for use in Tableau and one for further analysis with pandas. Tableau does not like decimal separators as a period and requires them to be a comma.~~<br />
+You can specify the comma when connecting the data scource in Tableau, no need for separate exports.<br />
 Because of their size these two files have not been uploaded to GitHub.
 
 ## Part 5 -- Visualisations
-Pretty graphs.
+Lorem ipsum ....
+
+[Visualisations notebook](ecom_viz.ipynb)
 
 ## Part 6 -- Presentation
 
